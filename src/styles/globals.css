@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  @import "~reactflow/dist/style.css";
+
+  .react-flow__handle {
+    @apply h-4 w-4 bg-indigo-500 border-indigo-500;
+  }
+
+  .react-flow__handle-top {
+    @apply -top-2;
+  }
+
+  .react-flow__handle-bottom {
+    @apply -bottom-2;
+  }
+}
