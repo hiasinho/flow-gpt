@@ -14,6 +14,7 @@ import ReactFlow, {
 import { type WidgetType, widgetTypes } from "./widgetTypes";
 import { useWhiteboard } from "./store";
 import { WhiteboardToolbar } from "./WhiteboardToolbar";
+import Image from "next/image";
 
 const fitViewOptions: FitViewOptions = {
   padding: 0.2,
@@ -60,6 +61,15 @@ export const Whiteboard = () => {
       >
         <Panel position="top-left">
           <WhiteboardToolbar onClickAdd={handleCreate} />
+        </Panel>
+        <Panel position="top-right">
+          <Image
+            src="/FlowGPT.svg"
+            width={100}
+            height={100}
+            alt="Logo"
+            className="bg-white/50 backdrop-blur"
+          />
         </Panel>
         <Controls />
         <MiniMap pannable zoomable />
