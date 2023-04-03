@@ -1,28 +1,67 @@
-# Create T3 App
+# FlowGPT
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+FlowGPT is a playground to visualy generate prompts for ChatGPT. It helps you 
+create better prompts by providing an interface to explore various modifiers and 
+compare your results in one place.
 
-## What's next? How do I make an app with this?
+## Install
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+### Download and install the app
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+```bash
+git clone https://github.com/hiasinho/flow-gpt.git
+cd flow-gpt
+npm install
+```
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+### Configure
 
-## Learn More
+Make a copy of `.env.example` and rename it to `.env` to set your OpenAI
+credentials
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+```bash
+cp .env.example .env
+```
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+```bash
+# .env
+OPENAI_API_ORG=your-api-org
+OPENAI_API_KEY=your-api-key
+```
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Features
 
-## How do I deploy this?
+- Create Prompts, Modifiers and Results by using the Toolbar (top-left corner)
+- Connect them using connection lines
+- Use result objects to generate ChatGPT responses
+- Arrange everything visualy and explore multiple paths
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## If you're here for the tech
+
+### Stack
+
+FlowGPT is built using:
+
+- Next.js
+- tRPC
+- Tailwind
+- zustand including local storage persistence and immer.js
+- React Flow
+- OpenAI API
+
+### Structure
+
+Everything is located under the `src/` directory.
+
+```
+presentation/ - Presentational layer (components like Buttons)
+lib/ - Custom libraries or library wrappers
+domains/ - Holds the concepts
+pages/ - All routes
+server/ - Server-side components
+utils/ - Utility functions
+```
+
+### Please note
+This repository doesn't hold any integration or unit tests. It's a prototype
+with focus on exploration.
